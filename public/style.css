@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(0, 7%, 84%);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  /* width: 275px; */
+  /* height: 275px; */
+}
+#user,
+#computer {
+  border: 2px solid rgb(79, 73, 73);
+}
+.battle-grid {
+  display: grid;
+  grid-template-rows: repeat(11, 25px);
+  grid-template-columns: repeat(11, 25px);
+  background-color: #eee;
+}
+.battle-grid div {
+  border: 1px solid rgb(79, 73, 73);
+}
+.header-squares {
+  background-color: hsl(26, 100%, 60%);
+  text-align: center;
+}
+.user-grid {
+  margin: 25px;
+}
+.computer-grid {
+  margin: 25px;
+}
+#controllers {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  padding: 10px 30px;
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  background-color: hsl(26, 100%, 50%);
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: hsl(26, 100%, 60%);
+}
+.ships {
+  margin: 10px 10px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+#ready-btn {
+  margin: none;
+}
+.ship {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 20px;
+}
+.ship > * {
+  flex: 1;
+}
+.ship-part {
+  width: 25px;
+  height: 25px;
+}
+
+.destroyer-container {
+  width: 50px;
+  height: 25px;
+  margin: 5px;
+  background-color: hsl(0, 1%, 30%);
+}
+.submarine-container {
+  width: 75px;
+  height: 25px;
+  margin: 5px;
+  background-color: hsl(0, 1%, 30%);
+}
+.cruise-container {
+  width: 75px;
+  height: 25px;
+  margin: 5px;
+  background-color: hsl(0, 1%, 30%);
+}
+.battleship-container {
+  width: 100px;
+  height: 25px;
+  margin: 5px;
+  background-color: hsl(0, 1%, 30%);
+}
+.carrier-container {
+  width: 125px;
+  height: 25px;
+  margin: 5px;
+  background-color: hsl(0, 1%, 30%);
+}
+
+.destroyer {
+  background-color: hsl(0, 1%, 30%);
+}
+.submarine {
+  background-color: hsl(0, 1%, 30%);
+}
+.cruise {
+  background-color: hsl(0, 1%, 30%);
+}
+.battleship {
+  background-color: hsl(0, 1%, 30%);
+}
+.carrier {
+  background-color: hsl(0, 1%, 30%);
+}
+/* #computer .destroyer,
+#computer .submarine,
+#computer .cruise,
+#computer .battleship,
+#computer .carrier
+{
+    background-color: #eee;
+
+} */
+.boom {
+  background-color: red !important;
+}
+.empty {
+  background-color: rgb(220, 220, 141) !important;
+}
+.sunk {
+    background-color: rgb(84, 24, 24) !important;
+}
+.game-info {
+  /* display: none; */
+  /* margin-top: 100px; */
+  text-align: center;
+}
+.error-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+}
+.whos-turn {
+  font-size: 3rem;
+  color: rgb(163, 26, 69);
+}
+.ship-sunk {
+  font-size: 1.5rem;
+  color: hsla(0, 0%, 0%, 0.618);
+}
