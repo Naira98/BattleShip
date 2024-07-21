@@ -363,10 +363,10 @@ function checkScore(player, playerHits, playerSunkenShips, gridSquares) {
     if (playerHits.filter((hit) => hit === name).length === length) {
       if (player === "user") {
         userHits = playerHits.filter((shipName) => shipName !== name);
-        infoDisplay.textContent = `You have sunken computer's ${name} ship`;
+        infoDisplay.textContent = `The computer's ${name} ship has sunken`;
       } else if (player === "computer") {
         computerHits = playerHits.filter((shipName) => shipName !== name);
-        infoDisplay.textContent = `Computer has sunken your ${name} ship`;
+        infoDisplay.textContent = `Your ${name} ship has sunken`;
       }
       playerSunkenShips.push(name);
       for (let sunken of playerSunkenShips) {
