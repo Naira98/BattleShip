@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: hsl(0, 7%, 84%);
+  background-color: hsl(192, 16%, 94%);
 }
 .container {
   display: flex;
@@ -10,7 +10,7 @@ body {
 }
 #user,
 #computer {
-  border: 2px solid rgb(79, 73, 73);
+  border: 2px solid rgb(114, 110, 110);
 }
 .battle-grid {
   display: grid;
@@ -19,11 +19,15 @@ body {
   background-color: #eee;
 }
 .battle-grid div {
-  border: 1px solid rgb(79, 73, 73);
+  border: 1px solid rgb(114, 110, 110);
 }
 .header-squares {
-  background-color: hsl(26, 100%, 60%);
+  background-color: hsl(213, 70%, 57%);
+  color: rgb(226, 223, 223);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .user-grid {
   margin: 25px;
@@ -43,12 +47,12 @@ button {
   font-weight: bold;
   border: none;
   border-radius: 50px;
-  background-color: hsl(26, 100%, 50%);
-  color: white;
+  background-color: hsl(213, 70%, 57%);
+  color: rgb(226, 223, 223);
   cursor: pointer;
 }
 button:hover {
-  background-color: hsl(26, 100%, 60%);
+  background-color: hsla(213, 70%, 57%, 0.901);
 }
 .ships {
   margin: 10px 10px;
@@ -125,10 +129,8 @@ button:hover {
 #computer .submarine,
 #computer .cruise,
 #computer .battleship,
-#computer .carrier
-{
-    background-color: #eee;
-
+#computer .carrier {
+  background-color: #eee;
 }
 .boom {
   background-color: red !important;
@@ -137,7 +139,7 @@ button:hover {
   background-color: rgb(220, 220, 141) !important;
 }
 .sunk {
-    background-color: rgb(84, 24, 24) !important;
+  background-color: rgb(84, 24, 24) !important;
 }
 .game-info {
   /* display: none; */
