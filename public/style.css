@@ -14,8 +14,8 @@ body {
 }
 .battle-grid {
   display: grid;
-  grid-template-rows: repeat(11, 25px);
-  grid-template-columns: repeat(11, 25px);
+  grid-template-rows: repeat(11, 35px);
+  grid-template-columns: repeat(11, 35px);
   background-color: #eee;
 }
 .battle-grid div {
@@ -121,7 +121,7 @@ button:hover {
 .carrier {
   background-color: hsl(0, 1%, 30%);
 }
-/* #computer .destroyer,
+#computer .destroyer,
 #computer .submarine,
 #computer .cruise,
 #computer .battleship,
@@ -129,7 +129,7 @@ button:hover {
 {
     background-color: #eee;
 
-} */
+}
 .boom {
   background-color: red !important;
 }

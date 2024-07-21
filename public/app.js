@@ -12,6 +12,7 @@ let userHits = [];
 let computerHits = [];
 const userSunkenShips = [];
 const computerSunkenShips = [];
+let audio;
 
 const width = 10;
 let angle = 0;
@@ -69,7 +70,7 @@ let computerGridSquares = Array.from(
 );
 
 let notTargetedYet = [];
-for(let i = 0; i < width * width; i++) {
+for (let i = 0; i < width * width; i++) {
   notTargetedYet.push(i);
 }
 
@@ -188,7 +189,6 @@ function isValid(startIndex, length, isHorizontal, isTakenArray) {
       return false;
     }
     return true;
-
   } else if (!isHorizontal) {
     // check if any block is taken
     for (let i = 0; i < length; i++) {
@@ -251,6 +251,8 @@ function startGame() {
     whosTurn.textContent = "You Go";
     infoDisplay.textContent = "";
     startBtn.style.display = "none";
+    audio = new Audio("/audio/start-game.mp3");
+    audio.play();
     computerGridSquares.forEach((computerSquare) => {
       computerSquare.addEventListener("click", handleClick);
     });
@@ -283,12 +285,16 @@ function handleClick(e) {
       userHits.push(...classes);
 
       infoDisplay.textContent = `You hit the ${classes[0]} ship`;
+      audio = new Audio("/audio/hit.mp3");
+      audio.play();
       checkScore("user", userHits, userSunkenShips, computerGridSquares);
       console.log("userHits", userHits);
       console.log("userSunkenShips", userSunkenShips);
     } else {
       squareClicked.classList.add("empty");
       infoDisplay.textContent = "You couldn't hit computer's ships";
+      audio = new Audio("/audio/miss.mp3");
+      audio.play();
     }
     computerGridSquares.forEach((computerSquare) => {
       computerSquare.replaceWith(computerSquare.cloneNode(true));
@@ -324,6 +330,8 @@ function computerGo() {
         computerHits.push(...classes);
 
         infoDisplay.textContent = `The computer hit your ${classes[0]} ship`;
+        audio = new Audio("/audio/hit.mp3");
+        audio.play();
         checkScore(
           "computer",
           computerHits,
@@ -333,6 +341,8 @@ function computerGo() {
       } else {
         userGridSquares[randomIndex].classList.add("empty");
         infoDisplay.textContent = "The computer couldn't hit your ships";
+        audio = new Audio("/audio/miss.mp3");
+        audio.play();
       }
 
       whosTurn.innerText = "You Go";
@@ -344,7 +354,7 @@ function computerGo() {
       computerGridSquares.forEach((computerSquare) => {
         computerSquare.addEventListener("click", handleClick);
       });
-    }, 10);
+    }, 1000);
   }
 }
 
@@ -380,9 +390,13 @@ function checkScore(player, playerHits, playerSunkenShips, gridSquares) {
     if (player === "user") {
       whosTurn.textContent = "YOU WIN 🎉";
       infoDisplay.textContent = "You have destroyed all computer's ships";
+      audio = new Audio("/audio/win.wav");
+      audio.play();
     } else if (player === "computer") {
       whosTurn.textContent = "COMPUTER WINS 😶‍🌫️";
       infoDisplay.textContent = "Computer destroyed all your ships";
+      audio = new Audio("/audio/lose.wav");
+      audio.play();
     }
     gameOver = true;
     return;
