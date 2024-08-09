@@ -1,4 +1,4 @@
-import { createBoard } from "./helpers/createBoards.js";
+import { createBoard } from "./utils/createBoards.js";
 import {
   addShipPiece,
   dragEnd,
@@ -6,8 +6,8 @@ import {
   dragStart,
   dropShip,
   selectedShipPart,
-} from "./helpers/placeShips.js";
-import { startGame } from "./helpers/game.js";
+} from "./utils/placeShips.js";
+import { startGame } from "./utils/game.js";
 
 const userGrid = document.querySelector(".user-grid");
 const computerGrid = document.querySelector(".computer-grid");
